@@ -4,7 +4,6 @@ import (
 	"AoC2025"
 	"fmt"
 	"strconv"
-	"strings"
 )
 
 func main() {
@@ -15,10 +14,9 @@ func main() {
 	zeroMultiplier := 0
 
 	for _, input := range inputAsSlice {
-		lineAsSlice := strings.SplitN(input, "", 2)
 		zeroMultiplier = 0
-		direction := lineAsSlice[0]
-		clicks, _ := strconv.Atoi(lineAsSlice[1])
+		direction := input[0:1]
+		clicks, _ := strconv.Atoi(input[1:])
 		if clicks > 100 {
 			zeroMultiplier = clicks / 100
 			clicks = clicks % 100
